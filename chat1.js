@@ -106,7 +106,9 @@ function self_msg_status(el, status){
 document.addEventListener("DOMContentLoaded", function() {
   new_switch("Status", 'stage_0="flex flex-col justify-center h-4 w-8 rounded-full bg-gray-400 items-start" stage_1="flex flex-col justify-center h-4 w-8 rounded-full bg-indigo-500 items-center" stage_2="flex flex-col justify-center h-4 w-8 rounded-full bg-red-600 items-end"', "3", switch_trig);
 
-  var mymsg = self_new_msg("Person1", "x", "Hello there!","0")
+  receive_new_msg("Oki", "x", "Allo", "0")
+  
+  var mymsg = send_new_msg("Person1", "x", "Hello there!","0")
   self_msg_status(mymsg, "Seen")
 });
 
