@@ -43,7 +43,7 @@ function new_switch(title, stages, max_stages, caller) {
   var html = `
     <div class="status-switch flex flex-row items-center mt-3">
       <div class="leading-none mr-1 text-xs font-bold">${title}</div>
-      <div class="flex flex-col justify-center h-4 w-8 bg-gray-400 rounded-full cursor-pointer" stage="0" stage_0="bg-gray-400 items-start" stage_1="bg-indigo-500 items-center" stage_2="bg-red-600 items-end">
+      <div class="flex flex-col justify-center h-4 w-8 bg-gray-400 rounded-full cursor-pointer" stage="0" ${stages}>
         <div class="h-3 w-3 bg-white rounded-full mr-1 ml-1"></div>
       </div>
       <div class="leading-none ml-1 text-xs">Invisible</div>
