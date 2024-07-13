@@ -60,7 +60,7 @@ function new_switch(title, stages, max_stages, caller) {
   document.getElementById("left-side-list").appendChild(element);
 }
 
-function self_new_msg(name, profileurl, msg, id){
+function receive_new_msg(name, profileurl, msg, id){
   var html = `
                 <div profile_id="${id}" class="chat-msg col-start-1 col-end-8 p-3 rounded-lg">
                   <div class="flex flex-row items-center">
@@ -77,28 +77,39 @@ function self_new_msg(name, profileurl, msg, id){
   document.getElementById("messages-content").appendChild(element);
 }
 
-function receive_new_msg(name,profileurl, msg, id){
+function send_new_msg(name,profileurl, msg, id){
   var html = `
-                <div profile_id="${id}" class="chat-msg col-start-6 col-end-13 p-3 rounded-lg">
+                <div  profile_id="${id}" class="chat-msg col-start-6 col-end-13 p-3 rounded-lg">
                   <div class="flex items-center justify-start flex-row-reverse">
                     <div class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0">
                       <img src="${profileurl}" alt="${name.charAt(0)}" items-center justify-center>
                     </div>
                     <div class="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl">
                       <div>${msg}</div>
+                      <div class="absolute text-xs bottom-0 right-0 -mb-5 mr-2 text-gray-500"> Not sent yet </div>
                     </div>
                   </div>
                 </div>
   `
   var element = createElementFromHTML(html);
   document.getElementById("messages-content").appendChild(element);
+
+  return element
 }
+
+function self_msg_status(el, status){
+  var st_el = el.children[0].children[1].children[1].innerText = status
+}
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
   new_switch("Status", 'stage_0="flex flex-col justify-center h-4 w-8 rounded-full bg-gray-400 items-start" stage_1="flex flex-col justify-center h-4 w-8 rounded-full bg-indigo-500 items-center" stage_2="flex flex-col justify-center h-4 w-8 rounded-full bg-red-600 items-end"', "3", switch_trig);
 
-  self_new_msg("Person1", "x", "Hello there!","0")
+  var mymsg = self_new_msg("Person1", "x", "Hello there!","0")
+  self_msg_status(mymsg, "Seen")
 });
+
+
 
 
