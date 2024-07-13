@@ -73,6 +73,8 @@ function self_new_msg(name, profileurl, msg, id){
                   </div>
                 </div>
   `
+  var element = createElementFromHTML(html);
+  document.getElementById("messages-content").appendChild(element);
 }
 
 function receive_new_msg(name,profileurl, msg, id){
@@ -89,7 +91,7 @@ function receive_new_msg(name,profileurl, msg, id){
                 </div>
   `
   var element = createElementFromHTML(html);
-  document.getElementById("left-side-list").appendChild(element);
+  document.getElementById("messages-content").appendChild(element);
 }
 
 
