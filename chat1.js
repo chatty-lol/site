@@ -43,7 +43,7 @@ function get_switches() {
   return document.getElementsByClassName("status-switch");
 }
 
-function new_switch(title, stages, max_stages, caller) {
+function new_switch(title, stages, max_stages) {
   var html = `
     <div class="status-switch flex flex-row items-center mt-3">
       <div class="leading-none mr-1 text-xs font-bold">${title}</div>
@@ -104,7 +104,7 @@ function self_msg_status(el, status){
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  new_switch("Status", 'stage_0="flex flex-col justify-center h-4 w-8 rounded-full bg-gray-400 items-start" stage_1="flex flex-col justify-center h-4 w-8 rounded-full bg-indigo-500 items-center" stage_2="flex flex-col justify-center h-4 w-8 rounded-full bg-red-600 items-end"', "3", switch_trig);
+  new_switch("Status", 'stage_0="flex flex-col justify-center h-4 w-8 rounded-full bg-gray-400 items-start cursor-pointer" stage_1="flex flex-col justify-center h-4 w-8 rounded-full bg-indigo-500 items-center cursor-pointer" stage_2="flex flex-col justify-center h-4 w-8 rounded-full bg-red-600 items-end cursor-pointer"', "3");
 
   receive_new_msg("Oki", "x", "Allo", "0")
   
