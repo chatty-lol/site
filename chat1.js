@@ -52,14 +52,14 @@ function u_close_status_code_popup(){
   el.className = "invisible flex absolute left-0 top-0 w-screen h-screen bg-none items-center justify-center"
 }
 
-function u_status_code(code){
+function u_status_code(code=200,time=4000){
   var rint = randomIntFromInterval(0,3)
   var ur = u_status_code_popup(code,rint)
   setTimeout(()=>{
     if (document.getElementById("status-code-popup").children[0].children[0].src == ur){
       u_close_status_code_popup()
     }
-  },5000)
+  },time)
 }
 
 
