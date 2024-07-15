@@ -65,6 +65,8 @@ function u_status_code(code=200,time=4000){
 
 function u_switch_trig(titles) {
   var stage = this.getAttribute("stage");
+  var max_stages = this.getAttribute("max_stages");
+  
   switch(stage) {
     case "0":
       this.setAttribute("stage", "1");
@@ -75,6 +77,9 @@ function u_switch_trig(titles) {
       this.className = this.getAttribute("stage_2");
       break;
     case "2":
+      if (max_stages == "2"){
+        break;
+      }
       this.setAttribute("stage", "0");
       this.className = this.getAttribute("stage_0");
       break;
@@ -99,7 +104,7 @@ function u_new_switch(title, stages, max_stages) {
   var html = `
     <div class="status-switch flex flex-row items-center mt-3">
       <div class="leading-none mr-1 text-xs font-bold">${title}</div>
-      <div class="flex flex-col justify-center h-4 w-8 bg-gray-400 rounded-full cursor-pointer" stage="0" ${stages}>
+      <div class="flex flex-col justify-center h-4 w-8 bg-gray-400 rounded-full cursor-pointer" stage="0" max_stages="${max_stages}" ${stages}>
         <div class="h-3 w-3 bg-white rounded-full mr-1 ml-1"></div>
       </div>
       <div class="leading-none ml-1 text-xs">Invisible</div>
