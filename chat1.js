@@ -73,11 +73,14 @@ function u_switch_trig(titles) {
       this.className = this.getAttribute("stage_1");
       break;
     case "1":
+      if (max_stages == "2"){
+        break;
+      }
       this.setAttribute("stage", "2");
       this.className = this.getAttribute("stage_2");
       break;
     case "2":
-      if (max_stages == "2"){
+      if (max_stages == "3"){
         break;
       }
       this.setAttribute("stage", "0");
