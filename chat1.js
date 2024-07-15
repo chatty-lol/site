@@ -74,15 +74,13 @@ function u_switch_trig(titles) {
       break;
     case "1":
       if (max_stages == "2"){
+        this.setAttribute("stage", "0");
         break;
       }
       this.setAttribute("stage", "2");
       this.className = this.getAttribute("stage_2");
       break;
     case "2":
-      if (max_stages == "3"){
-        break;
-      }
       this.setAttribute("stage", "0");
       this.className = this.getAttribute("stage_0");
       break;
@@ -165,7 +163,7 @@ function u_self_msg_status(el, status){
 
 document.addEventListener("DOMContentLoaded", function() {
   u_new_switch("Status", 'stage_0="flex flex-col justify-center h-4 w-8 rounded-full bg-gray-400 items-start cursor-pointer" stage_1="flex flex-col justify-center h-4 w-8 rounded-full bg-indigo-500 items-center cursor-pointer" stage_2="flex flex-col justify-center h-4 w-8 rounded-full bg-red-600 items-end cursor-pointer"', "3");
-  u_new_switch("Server Responses", 'stage_0="flex flex-col justify-center h-4 w-8 rounded-full bg-green-600 items-start cursor-pointer" stage_1="flex flex-col justify-center h-4 w-8 rounded-full bg-red-600 items-center cursor-pointer"', "2");
+  u_new_switch("Server Responses", 'stage_0="flex flex-col justify-center h-4 w-8 rounded-full bg-green-600 items-start cursor-pointer" stage_1="flex flex-col justify-center h-4 w-8 rounded-full bg-red-600 items-end cursor-pointer"', "2");
 
   
   u_receive_new_msg("Oki", "x", "Allo", "0")
