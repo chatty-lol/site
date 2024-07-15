@@ -42,8 +42,6 @@ function u_status_code_popup(code, api){
       break;
   }
   el.children[0].children[0].src = urlimg
-  
-  el.className = "flex absolute left-0 top-0 w-screen h-screen bg-none items-center justify-center"
 
   return urlimg
 }
